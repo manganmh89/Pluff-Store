@@ -10,9 +10,22 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.use('/public', express.static('public'));
 
-
+//Mount Middleware
 
 const PORT = process.env.PORT;
 const DATABASE_URI = process.env.DATABASE_URI;
 mongoose.connect(DATABSE_URI);
 const db = mongoose.connection;
+
+//Index
+//New
+//Delete
+//Update
+//Create
+//Edit
+//Show
+
+//App Listener
+app.listen(Port, () =>{
+    console.log(`Express is listening on: ${Port}`);
+});
