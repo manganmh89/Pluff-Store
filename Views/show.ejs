@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1><%=product.name%></h1>
+    <img src="<%=product.img%>"> <br>
+    <p>Description: <%=product.description%></p>
+    <p>Quantity: <%=product.qty%></p>
+    <p>Price: <%=product.price%>
+    <br>
+    <form action="/products/<%= product._id %>/buy" method="POST">
+        <input type="submit" value="Buy Now" />
+    </form>
+        <a href="/products">Back to Products List</a>
+</body>
+</html>
