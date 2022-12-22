@@ -38,15 +38,61 @@ app.get('/products', (req, res) =>{
         res.render('index.ejs', {products: foundProduct});
     });
 });
+
 //New
+app.get('/products/new', (req, res) =>{
+    res.render('new.ejs');
+});
+
 //Delete
+app.delete('/products/:id', (req, res) =>{
+    Product.findByIdAndDelete(req.params.id, (err, data) =>{
+        res.redirect('/products');
+    });
+});
+
 //Update
+app.put('/products/:id', (req, res) =>{
+    Product.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new:true,
+        },
+        (error, updatedProduct) =>{
+            // console.log(error)
+            res.redirect(`/products/${req.params.id}`)
+        });
+});
+
+app.post('/products/:id/buy', (req, res) =>{
+    Product.findByIdAndUpdate(
+        req.params.id,
+        {$inc: {qty:-1}}, 
+        () => {
+            res.redirect(`/products/${req.params.id}`)
+        });
+});
+
 //Create
+app.post('/products', (req, res)=>{
+    Product.create(req.body, (error, createdProduct)=>{
+        res.redirect('/products');
+    });
+});
+
 //Edit
+app.get('/products/:id/edit', (req, res) =>{
+    Product.findById(req.params.id, (err, foundProduct) =>{
+        // console.log(foundProduct);
+        res.render("edit.ejs", {product: foundProduct});
+    });
+});
+
 //Show
 app.get('/products/:id', (req, res)=>{
-    Product.findById(req.params.id, (err, foundProduct) =>{
-        res.render('show.ejs', {foundProduct});
+    Product.findById(req.params.id, (err, product) =>{
+        res.render('show.ejs', {product});
     });
 });
 

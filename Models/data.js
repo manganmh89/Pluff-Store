@@ -8,7 +8,7 @@ module.exports = [
     }, {
       name: '002',
       description: "This is a traditional spiral fold and can be used with any color pattern.",
-      img: 'https://i.imgur.com/9Ixfy5y.jpg',
+      img: 'https://i.imgur.com/RfgriCM.png',
       price: 45,
       qty: 10
     }, {
