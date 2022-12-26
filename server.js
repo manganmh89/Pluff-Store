@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const Product = require('./models/productSchema.js')
+const Product = require('./models/productSchema.js');
+const Blog = require('./models/blogSchema.js')
 const Port = 3000;
 require('dotenv').config();
 
@@ -21,6 +22,7 @@ db.on('error', (err)=>console.log('error occurred with MongoDB: ' + err.message)
 db.on('connected', ()=>console.log(`successful connection to MongoDB on ${db.host}:${db.port}`));
 
 const productSeed = require('./models/data.js');
+const blogSeed = require('./models/blog.js');
 // const { $where } = require('./models/productSchema.js');
 
 //Seed Route
@@ -32,6 +34,14 @@ app.get('/products/seed', (req, res) =>{
     });
 });
 
+app.get('/products/blog', (req, res) =>{
+    Blog.deleteMany({}, (err) =>{
+        Blog.create(blogSeed, (err, data) =>{
+            res.redirect('/blog');
+        });
+    });
+});
+
 //Index
 app.get('/products', (req, res) =>{
     Product.find({}, (err, foundProduct) =>{
@@ -39,8 +49,16 @@ app.get('/products', (req, res) =>{
     });
 });
 
-app.get('/products/blog', (req, res) =>{
-    res.render('blog.ejs');
+app.get('/blog', (req, res) =>{
+    Blog.find({}, (err, foundBlog) =>{
+        res.render('blog.ejs', {blog: foundBlog});
+    });
+});
+//Admin Page
+app.get('/products/admin', (req, res) =>{
+    Product.find(req.params.id, (err, product) =>{
+        res.render('admin.ejs', {product});
+    } )
 });
 
 //New

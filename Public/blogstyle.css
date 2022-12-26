@@ -1,0 +1,30 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 2fr 20px;
+    grid-template-areas:
+    "navbar" "navbar"
+    "blog" "blog"
+    "footer" "footer";
+    margin: 5px;
+    grid-gap: 2px;
+    font-family:'Courier New';
+    align-content: center;
+    background-color:beige;
+}
+
+.navbar {
+grid-area: navbar;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin: 5px;
+};
+
+.blog {
+grid-area: blog;
+};
+
+.footer {
+grid-area: footer;
+};
