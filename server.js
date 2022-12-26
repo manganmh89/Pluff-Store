@@ -39,6 +39,10 @@ app.get('/products', (req, res) =>{
     });
 });
 
+app.get('/products/blog', (req, res) =>{
+    res.render('blog.ejs');
+});
+
 //New
 app.get('/products/new', (req, res) =>{
     res.render('new.ejs');

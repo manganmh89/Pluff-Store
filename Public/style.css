@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 2fr 20px;
+    grid-template-areas:
+    "navbar" "navbar"
+    "shirts" "blog"
+    "footer" "footer";
+    margin: auto;
+    grid-gap: 2px;
+    font-family:'Courier New';
+    align-content: center;
+    background-color:beige;
+}
