@@ -59,7 +59,7 @@ app.get('/blog', (req, res) =>{
     });
 });
 //Admin Page
-app.get('/products/admin', (req, res) =>{
+app.get('/admin', (req, res) =>{
         res.render('admin.ejs');
 });
 
@@ -141,6 +141,23 @@ app.get('/admin/edit', (req, res)=>{
         names.push(product.name)
         }
         res.render('admin.ejs', {names});
+    });
+});
+
+//Edit Blog (on admin page)
+app.get('/blog/:id/edit', (req, res) =>{
+    Blog.findById(req.params.id, (err, foundBlog) =>{
+        res.render('admin.ejs', {foundBlog})
+    })
+})
+//Edit the blog based on the returned blog title from MongoDB
+app.get('/admin/edit', (req, res) =>{
+    Blog.find({}, (err, posts) =>{
+        const titles = [];
+        for (let title of posts){
+            titles.push(blog.title)
+        }
+        res.render('admin.ejs', {titles});
     });
 });
 

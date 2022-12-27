@@ -11,34 +11,72 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <script>
-//     $(document).on('change', 'select', ()=> {
-        
-//     })
-// </script>
+    $(document).on('change', 'select', ()=> {
+    })
+</script>
 <body>
-    <h1>Edit Product</h1>
-    <form action="/products/?_method=PUT" method="POST">
-        ID: <select name="name" id="Product ID">
-            <% names.forEach(name => { %>
-                <option><%= name %></option>
-            <% }); %></select>
+    <header class="navbar">
+        <img
+        src="/public/pluffLogo.svg"
+        alt="circular transparent logo"
+        height="125"
+        width="125" /> 
+        <h2>Welcome to my blog and tutorial page!</h2>
+        <div><a href="/products">Back to the Shop!</a></div>
+        <div><a href="/aboutme">About Me</a></div>
+        <div><a href="/admin">Admin Login</a></div>
+    </header>
+    <main>
+        <h1>Edit Product</h1>
+            <form action="/products/?_method=PUT" method="POST">
+            ID: <select name="name" id="Product ID">
+                <% names.forEach(name => { %>
+                    <option><%= name %></option>
+                <% }); %></select>
             <br>
-        Description: <input type="text" name="description" value="" /><br />
-        Image: <input type="text" name="img" value="" /><br />
-        Price: <input type="text" name="price" value="" /><br />
-        Quantity: <input type="text" name="qty" value="" /><br />
-        <br />
-        <input type="submit" value="Submit Changes" />
-    </form>
-
-    <h1>Add New Product</h1>
-    <form action="/products" method="POST">
-        Name: <input type="text" name="name"><br>
-        Description: <input type="text" name="description"><br>
-        Image: <input type="text" name="img"><br>
-        Price: <input type="text" name="price"><br>
-        Quantity: <input type="text" name="qty"><br>
-        <input type="submit" value="Add New Product">
-    </form>
+            Description: <input type="text" name="description" value="" /><br />
+            Image: <input type="text" name="img" value="" /><br />
+            Price: <input type="text" name="price" value="" /><br />
+            Quantity: <input type="text" name="qty" value="" /><br />
+            <br>
+            <input type="submit" value="Submit Changes" />
+            </form>
+            <br>
+        <h1>Add New Product</h1>
+            <form action="/products" method="POST">
+            Name: <input type="text" name="name"><br>
+            Description: <input type="text" name="description"><br>
+            Image: <input type="text" name="img"><br>
+            Price: <input type="text" name="price"><br>
+            Quantity: <input type="text" name="qty"><br>
+            <input type="submit" value="Add New Product">
+            </form>
+            <br>
+        <h1>Edit Blog Posts</h1>
+        <form action="/blog/?_method=PUT" method="POST">
+            Title: <select name="title" id="Blog Title">
+                <% titles.forEach(title => { %>
+                    <option><%= title %></option>
+                <% }); %></select>
+            <br>
+            Date: <input type="text" name="description" value="" /><br />
+            Content: <input type="text" name="img" value="" /><br />
+            Image: <input type="text" name="price" value="" /><br />
+            <br>
+            <input type="submit" value="Submit Changes" />
+            </form>
+            <br>
+        <h1>Add New Blog Post</h1>
+            <form action="/blog" method="POST">
+            Title: <input type="text" name="name"><br>
+            Date: <input type="text" name="description"><br>
+            Content: <input type="text" name="img"><br>
+            Image: <input type="text" name="price"><br>
+            <input type="submit" value="Add New Product">
+            </form>
+            <br>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved 2022 Pluff Tie Dye Company</p> 
+    </footer>
 </body>
 </html>

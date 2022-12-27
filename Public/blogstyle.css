@@ -24,6 +24,10 @@ a:hover {
     background-image: url("https://media.istockphoto.com/id/1371441366/photo/colorful-psychedelic-rainbow-swirls-background.jpg?b=1&s=170667a&w=0&k=20&c=NWw28oh1tVRrWlBaj3j5WBmKnwUCr9BggHeVVKSdS50=");
     background-repeat: repeat-x;
 }
+video {
+    justify-content: center;
+    align-content: center;
+}
 
 body {
     display: grid;
