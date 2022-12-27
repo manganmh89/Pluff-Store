@@ -23,7 +23,6 @@ db.on('connected', ()=>console.log(`successful connection to MongoDB on ${db.hos
 
 const productSeed = require('./models/data.js');
 const blogSeed = require('./models/blog.js');
-// const { $where } = require('./models/productSchema.js');
 
 //Seed Route
 app.get('/products/seed', (req, res) =>{
@@ -66,17 +65,30 @@ app.get('/products/admin', (req, res) =>{
     } )
 });
 
-//New
+//New Product
 app.get('/products/new', (req, res) =>{
     res.render('new.ejs');
 });
 
-//Delete
+//New Blog
+app.get('/blog/new', (req, res) =>{
+    res.render('admin.ejs')
+})
+
+//Delete Products
 app.delete('/products/:id', (req, res) =>{
     Product.findByIdAndDelete(req.params.id, (err, data) =>{
         res.redirect('/products');
     });
 });
+
+//Delete Blog Posts
+app.delete('/blog/:id', (req, res) =>{
+    Blog.findByIdAndDelete(req.params.id, (err, data) =>{
+        res.redirect('/blog');
+    })
+})
+
 
 //Update (on admin page)
 app.put('/products/:id', (req, res) =>{
@@ -101,14 +113,22 @@ app.post('/products/:id/buy', (req, res) =>{
         });
 });
 
-//Create (on admin page)
+//Create Product(on admin page)
 app.post('/products', (req, res)=>{
-    Product.create(req.body, (error, createdProduct)=>{
+    Product.create(req.body, (error, createdProduct) =>{
         res.redirect('/products');
     });
 });
 
-//Edit (on admin page)
+//Create Blog (on admin page)
+app.post('/blog', (req, res) =>{
+    Blog.create(req.body, (error, createdBlog) =>{
+        res.redirect('/blog');
+    })
+})
+
+
+//Edit Product (on admin page)
 app.get('/products/:id/edit', (req, res) =>{
     Product.findById(req.params.id, (err, foundProduct) =>{
         // console.log(foundProduct);
@@ -116,11 +136,15 @@ app.get('/products/:id/edit', (req, res) =>{
     });
 });
 //Edit the item based on the returned product ID from MongoDB
-// app.get('/admin/edit', (req, res)=>{
-//     Products.find({}, function(err, id) {
-//         res.send('/admin/edit', {products: id});
-//     });
-// });
+app.get('/admin/edit', (req, res)=>{
+    Product.find({}, (err, products) =>{
+        const names = [];
+        for (let product of products){
+        names.push(product.name)
+        }
+        res.render('admin.ejs', {names});
+    });
+});
 
 //Show
 app.get('/products/:id', (req, res)=>{

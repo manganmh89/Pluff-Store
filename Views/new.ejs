@@ -5,8 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Product Entry</title>
+    <link rel="stylesheet" href="/public/shopstyle.css">
 </head>
 <body>
+    <header class="navbar">
+        <h2>Welcome to my blog and tutorial page!</h2>
+        <div><a href="https://localhost:3000/products">Back to the Shop!</a></div>
+        <div><a href="https://localhost:3000/aboutme">About Me</a></div>
+        <div><a href="https://localhost:3000/blog">Blog & Tutorials</a></div>
+        <div><a href="https://localhost:3000/admin">Admin Login</a></div>
+    </header>
     <h1>Add New Product</h1>
     <form action="/products" method="POST">
         Name: <input type="text" name="name"><br>
@@ -16,6 +24,8 @@
         Quantity: <input type="text" name="qty"><br>
         <input type="submit" value="Add New Product">
     </form>
-    <a href="/products">Back to Products List</a>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved 2022 Pluff Tie Dye Company</p> 
+    </footer>
 </body>
 </html>

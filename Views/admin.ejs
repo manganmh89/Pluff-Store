@@ -7,24 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <link rel="stylesheet" href="/public/shopstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
+<script>
+    $(document).on('change', 'select', ()=> {
+        
+    })
+</script>
 <body>
     <h1>Edit Product</h1>
-    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
-        <!--  NOTE: the form is pre-populated with values for the server -->
-        ID: <select name="id" id="Product ID">
-            <% for (let i = 0; i <Product.length; i++){%>
-            <a href="/products/<%= i %>"><%=Product[i].name %></a> 
-        <% } %>
-        </select>
-        Name: <input type="text" name="name" value="<%=product.name%>" /><br />
-        Description: <input type="text" name="description" value="<%=product.description%>" /><br />
-        Image: <input type="text" name="img" value="<%=product.img%>" /><br />
-        Price: <input type="text" name="price" value="<%=product.price%>" /><br />
-        Quantity: <input type="text" name="qty" value="<%=product.qty%>" /><br />
+    <form action="/products/?_method=PUT" method="POST">
+        ID: <select name="name" id="Product ID">
+            <% names.forEach(name => { %>
+                <option><%= name %></option>
+            <% }); %></select>
+            <br>
+        Description: <input type="text" name="description" value="" /><br />
+        Image: <input type="text" name="img" value="" /><br />
+        Price: <input type="text" name="price" value="" /><br />
+        Quantity: <input type="text" name="qty" value="" /><br />
         <br />
         <input type="submit" value="Submit Changes" />
-      </form>
+    </form>
 
     <h1>Add New Product</h1>
     <form action="/products" method="POST">
