@@ -48,7 +48,12 @@ app.get('/products', (req, res) =>{
         res.render('index.ejs', {products: foundProduct});
     });
 });
+//About Me Page
+app.get('/aboutme', (req, res) =>{
+    res.render('aboutMe.ejs');
+})
 
+//Blog Page
 app.get('/blog', (req, res) =>{
     Blog.find({}, (err, foundBlog) =>{
         res.render('blog.ejs', {blog: foundBlog});
@@ -73,7 +78,7 @@ app.delete('/products/:id', (req, res) =>{
     });
 });
 
-//Update
+//Update (on admin page)
 app.put('/products/:id', (req, res) =>{
     Product.findByIdAndUpdate(
         req.params.id,
@@ -96,20 +101,26 @@ app.post('/products/:id/buy', (req, res) =>{
         });
 });
 
-//Create
+//Create (on admin page)
 app.post('/products', (req, res)=>{
     Product.create(req.body, (error, createdProduct)=>{
         res.redirect('/products');
     });
 });
 
-//Edit
+//Edit (on admin page)
 app.get('/products/:id/edit', (req, res) =>{
     Product.findById(req.params.id, (err, foundProduct) =>{
         // console.log(foundProduct);
         res.render("edit.ejs", {product: foundProduct});
     });
 });
+//Edit the item based on the returned product ID from MongoDB
+// app.get('/admin/edit', (req, res)=>{
+//     Products.find({}, function(err, id) {
+//         res.send('/admin/edit', {products: id});
+//     });
+// });
 
 //Show
 app.get('/products/:id', (req, res)=>{

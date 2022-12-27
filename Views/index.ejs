@@ -10,12 +10,16 @@
 </head>
 <body>
     <header class="navbar">
+        <img id="pluffSvg" src="./public/images/logo.svg">
+        <a href="https://imgur.com/DZuHSug"><img src="https://i.imgur.com/DZuHSugb.png" title="source: imgur.com" /></a>
         <h3>Welcome to my store and tutorial blog. I hope to share my craft with you!</h3>
+        <p><a href="/aboutme">About Me</a></p>
+        <p>Check out my <a href="/blog">Blog and Tutorial</a></p>
+        <p><a href="/products/admin">Admin Login</a></p>
     </header>
-    <!-- <nav>
-        <a href="/products/new">Add New Item</a>
-    </nav> -->
-    <h1>Current Products</h1>
+    <div class="backgroundDisplay">
+    <img src="https://img.freepik.com/free-photo/colorful-marble-swirl-background-handmade-abstract-flowing-texture-experimental-art_53876-104510.jpg?w=1700" alt="paint"></div>
+    <h1>New Releases</h1>
     <ul>
         <% products.forEach(p => { %>
             <li>
@@ -24,7 +28,8 @@
             </li>
         <% }); %>
     </ul>
-    <h1>Check out my <a href="/blog">Blog and Tutorial</a></h1>
-    <a href="/products/admin">Admin Login</a>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved 2022 Pluff Tie Dye Company</p> 
+    </footer>
 </body>
 </html>
