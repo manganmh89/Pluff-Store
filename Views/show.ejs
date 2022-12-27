@@ -10,21 +10,21 @@
 <body>
     <header class="navbar">
         <h2>Welcome to my blog and tutorial page!</h2>
-        <div><a href="https://localhost:3000/products">Back to the Shop!</a></div>
-        <div><a href="https://localhost:3000/aboutme">About Me</a></div>
-        <div><a href="https://localhost:3000/blog">Blog & Tutorials</a></div>
-        <div><a href="https://localhost:3000/admin">Admin Login</a></div>
+        <div><a href="/products">Back to the Shop!</a></div>
+        <div><a href="/aboutme">About Me</a></div>
+        <div><a href="/blog">Blog & Tutorials</a></div>
+        <div><a href="/admin">Admin Login</a></div>
     </header>
-
-    <h1><%=product.name%></h1>
-    <img src="<%=product.img%>"> <br>
-    <p>Description: <%=product.description%></p>
-    <p>Quantity: <%=product.qty%></p>
-    <p>Price: <%=product.price%>
-    <br>
-    <form action="/products/<%= product._id %>/buy" method="POST">
-        <input type="submit" value="Buy Now" />
-    </form>
-        <a href="/products">Back to Products List</a>
+    <main class="productHighlight">
+        <h1><%=product.name%></h1>
+        <img src="<%=product.img%>"> <br>
+        <p>Description: <%=product.description%></p>
+        <p>Quantity: <%=product.qty%></p>
+        <p>Price: <%=product.price%>
+        <br>
+        <form action="/products/<%= product._id %>/buy" method="POST">
+            <input type="submit" value="Buy Now" />
+        </form>
+    </main>
 </body>
 </html>

@@ -5,14 +5,26 @@ header {
     justify-content: space-evenly;
     align-items: center;
     background-color:blanchedalmond;
+    color:#0A284B;
 }
-.backgroundDisplay {
-    grid-area: background; 
-    display: flex;
-    flex-direction: row;
+a {
+    box-shadow: inset 0 0 0 0 #e8f086;
+    color: #0A284B;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+    box-shadow: inset 100px 0 0 0 #e8f086;
+    color: #235FA4;
+}
 
-    
+.lineBreak {
+    grid-area: lineBreak;
+    background-image: url("https://media.istockphoto.com/id/1371441366/photo/colorful-psychedelic-rainbow-swirls-background.jpg?b=1&s=170667a&w=0&k=20&c=NWw28oh1tVRrWlBaj3j5WBmKnwUCr9BggHeVVKSdS50=");
+    background-repeat: repeat-x;
 }
+
 ul {
     display: flex;
     flex-direction: row;
@@ -20,35 +32,36 @@ ul {
     justify-content: space-evenly;
     align-items: center;
 }
-#logoSvg {
-    height:75px;
-    width:75px; 
+ul li {
+
+box-shadow: 5px 5px 10px 10px #235FA4 inset;
 }
 
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 50px 1fr 1fr 20px;
+    grid-template-rows: 150px 50px 1fr 20px;
     grid-template-areas:
     "navbar"
-    "background"
+    "lineBreak"
     "shirts"
-    "blog"
     "footer";
     margin: auto;
     grid-gap: 2px;
-    font-family:'Courier New'
+    font-family:'Courier New';
+    text-align: center;
     align-content: center;
-    background-color:beige;
+    background-color:#235FA4;
+    color: #A691AE;
 }
 
 footer {
     grid-area: footer;
-    background-color: blanchedalmond;
+    background-color: #235FA4;
     margin: 2px;
     align-items: center;
     justify-items: center;
-    color: #084843;
+    color: #6FDE6E;
     display: flex;
     justify-content: space-evenly;
 }

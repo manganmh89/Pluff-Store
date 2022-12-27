@@ -1,12 +1,12 @@
 module.exports = [
     {
-      name: '001',
+      name: '002',
       description: 'The first shirt style that I produced. This shirt can be made in any color of your choice.',
       img: 'https://i.imgur.com/f2gV9t6.png',
       price: 55,
       qty: 12
     }, {
-      name: '002',
+      name: '001',
       description: "This is a traditional spiral fold and can be used with any color pattern.",
       img: 'https://i.imgur.com/RfgriCM.png',
       price: 45,

@@ -60,9 +60,7 @@ app.get('/blog', (req, res) =>{
 });
 //Admin Page
 app.get('/products/admin', (req, res) =>{
-    Product.find(req.params.id, (err, product) =>{
-        res.render('admin.ejs', {product});
-    } )
+        res.render('admin.ejs');
 });
 
 //New Product
