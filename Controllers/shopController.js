@@ -30,6 +30,7 @@ shopRouter.delete('/:id', (req, res) =>{
         res.redirect('/products');
     });
 });
+
 //Update Products (on admin page)
 shopRouter.put('/:id', (req, res) =>{
     Product.findByIdAndUpdate(
@@ -43,6 +44,7 @@ shopRouter.put('/:id', (req, res) =>{
             res.redirect(`/products/${req.params.id}`)
         });
 });
+
 shopRouter.post('/:id/buy', (req, res) =>{
     Product.findByIdAndUpdate(
         req.params.id,
@@ -51,16 +53,17 @@ shopRouter.post('/:id/buy', (req, res) =>{
             res.redirect(`/products/${req.params.id}`)
         });
 });
+
 //Create Product(on admin page)
 shopRouter.post('/', (req, res)=>{
     Product.create(req.body, (error, createdProduct) =>{
         res.redirect('/products');
     });
 });
+
 //Edit Product (on admin page)
 shopRouter.get('/:id/edit', (req, res) =>{
     Product.findById(req.params.id, (err, foundProduct) =>{
-        // console.log(foundProduct);
         res.render("edit.ejs", {product: foundProduct});
     });
 });

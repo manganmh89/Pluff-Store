@@ -40,11 +40,12 @@ box-shadow: 5px 5px 10px 10px #235FA4 inset;
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 50px 1fr 20px;
+    grid-template-rows: 150px 50px 1fr 1fr 20px;
     grid-template-areas:
     "navbar"
     "lineBreak"
-    "shirts"
+    "editProduct"
+    "editBlog"
     "footer";
     margin: auto;
     grid-gap: 2px;
@@ -53,6 +54,19 @@ body {
     align-content: center;
     background-color:#235FA4;
     color: #A691AE;
+}
+.editProduct {
+    display: flex;
+    grid-area: editProduct;
+    align-self: auto;
+    padding: 15px;
+}
+
+.editBlog{
+    display: flex;
+    grid-area: editBlog;
+    align-self: auto;
+    padding: 15px;
 }
 
 footer {

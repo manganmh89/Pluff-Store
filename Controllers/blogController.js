@@ -13,6 +13,7 @@ blogRouter.get('/seed', (req, res) =>{
     });
 });
 
+
 //New Blog
 blogRouter.get('/new', (req, res) =>{
     res.render('admin.ejs')
@@ -25,7 +26,7 @@ blogRouter.delete('/:id', (req, res) =>{
     });
 });
 
-//Update (on admin page)
+//Update Blog (on admin page)
 blogRouter.put('/:id', (req, res) =>{
     Blog.findByIdAndUpdate(
         req.params.id,
@@ -49,8 +50,19 @@ blogRouter.post('/', (req, res) =>{
 blogRouter.get('/:id/edit', (req, res) =>{
     Blog.findById(req.params.id, (err, foundBlog) =>{
         res.render('admin.ejs', {foundBlog})
-    })
-})
+    });
+});
+//Edit the blog based on the returned blog ID from MongoDB
+// blogRouter.get('/edit', (req, res) =>{
+//     Blog.find({}, (err, products) =>{
+//         const titles = [];
+//         for (let blog of blogs){
+//             titles.push(blog.title)
+//         } console.log(titles);
+//         res.render('admin.ejs', {titles});
+//     });
+// });
+
 
 //Index of Blog Page
 blogRouter.get('/', (req, res) =>{
@@ -58,4 +70,5 @@ blogRouter.get('/', (req, res) =>{
         res.render('blog.ejs', {blog: foundBlog});
     });
 });
+
 module.exports = blogRouter;
