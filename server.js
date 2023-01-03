@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const Product = require('./models/productSchema.js');
-const Blog = require('./models/blogSchema.js')
+const Product = require('/models/productSchema.js');
+const Blog = require('/models/blogSchema.js')
 const Port = 3000;
 require('dotenv').config();
 
