@@ -16,6 +16,11 @@ app.use('/public', express.static('public'));
 app.use('/public/images', express.static('public'));
 app.use('/public/videos', express.static('public'));
 
+// const blogServer = require ('./controllers/blogserver.js');
+// const shopServer = require ('./controllers/shopserver.js');
+// app.use('/blog', blogServer);
+// app.use('/products', shopServer);
+
 
 const PORT = process.env.PORT;
 const DATABASE_URI = process.env.DATABASE_URI;
@@ -87,8 +92,8 @@ app.delete('/products/:id', (req, res) =>{
 app.delete('/blog/:id', (req, res) =>{
     Blog.findByIdAndDelete(req.params.id, (err, data) =>{
         res.redirect('/blog');
-    })
-})
+    });
+});
 
 
 //Update (on admin page)
@@ -133,11 +138,11 @@ app.post('/blog', (req, res) =>{
 app.get('/products/:id/edit', (req, res) =>{
     Product.findById(req.params.id, (err, foundProduct) =>{
         // console.log(foundProduct);
-        res.render("edit.ejs", {product: foundProduct});
+        res.render('edit.ejs', {product: foundProduct});
     });
 });
 //Edit the item based on the returned product ID from MongoDB
-app.get('/admin/edit', (req, res)=>{
+app.get('/admin', (req, res)=>{
     Product.find({}, (err, products) =>{
         const names = [];
         for (let product of products){
@@ -154,15 +159,15 @@ app.get('/blog/:id/edit', (req, res) =>{
     })
 })
 //Edit the blog based on the returned blog title from MongoDB
-app.get('/admin/edit', (req, res) =>{
-    Blog.find({}, (err, posts) =>{
-        const titles = [];
-        for (let title of posts){
-            titles.push(blog.title)
-        }
-        res.render('admin.ejs', {titles});
-    });
-});
+// app.get('/admin/edit', (req, res) =>{
+//     Blog.find({}, (err, posts) =>{
+//         const titles = [];
+//         for (let title of posts){
+//             titles.push(blog.title)
+//         }
+//         res.render('admin.ejs', {titles});
+//     });
+// });
 
 //Show
 app.get('/products/:id', (req, res)=>{

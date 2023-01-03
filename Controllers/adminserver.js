@@ -10,11 +10,11 @@ require('dotenv').config();
 
 //Middleware
 
-app.use(methodOverride("_method"));
-app.use(express.urlencoded({extended: true}));
-app.use('/public', express.static('public'));
-app.use('/public/images', express.static('public'));
-app.use('/public/videos', express.static('public'));
+// app.use(methodOverride("_method"));
+// app.use(express.urlencoded({extended: true}));
+// app.use('/public', express.static('public'));
+// app.use('/public/images', express.static('public'));
+// app.use('/public/videos', express.static('public'));
 
 
 const PORT = process.env.PORT;
