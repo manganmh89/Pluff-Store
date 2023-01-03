@@ -7,12 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="/public/shopstyle.css">
+    <link rel="stylesheet" href="/public/adminstyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <script>
-    $(document).on('change', 'select', ()=> {
-    })
+//     $(document).on('change', 'select', ()=> {
+//     })
+//  const testAjax - () =>{
+
+//  }
+//     $.ajax({
+//         type: "PUT",
+//         url: "./edit",
+//    data:
+//         success: (response) =>{
+//             console.log(response);
+//         }
+//     });
+// }
 </script>
 <body>
     <header class="navbar">
@@ -21,13 +33,16 @@
         alt="circular transparent logo"
         height="125"
         width="125" /> 
-        <h2>Welcome to my blog and tutorial page!</h2>
-        <div><a href="/products">Back to the Shop!</a></div>
+        <h2>Admin Page - Edit and Update</h2>
+        <div><a href="/products">Shop</a></div>
         <div><a href="/aboutme">About Me</a></div>
         <div><a href="/admin">Admin Login</a></div>
     </header>
+    <div class="lineBreak">
+    </div>
     <main>
-        <h1>Edit Product</h1>
+        <div class="editProduct">
+        <h3>Edit Product</h3>
             <form action="/products/?_method=PUT" method="POST">
             ID: <select name="name" id="Product ID">
                 <% names.forEach(name => { %>
@@ -42,7 +57,7 @@
                 <input type="submit" value="Submit Changes" />
             </form>
         <br>
-        <h1>Add New Product</h1>
+        <h3>Add New Product</h3>
             <form action="/products" method="POST">
             Name: <input type="text" name="name"><br>
             Description: <input type="text" name="description"><br>
@@ -51,8 +66,10 @@
             Quantity: <input type="text" name="qty"><br>
             <input type="submit" value="Add New Product">
             </form>
+        </div>
         <br>
-        <h1>Edit Blog Posts</h1>
+        <div class="editBlog">
+        <h3>Edit Blog Posts</h3>
             <form action="/blog/?_method=PUT" method="POST">
             Title: <select name="title" id="Blog Title">
                 <% titles.forEach(title => { %>
@@ -66,7 +83,7 @@
                 <input type="submit" value="Submit Changes" />
             </form>
         <br>
-        <h1>Add New Blog Post</h1>
+        <h3>Add New Blog Post</h3>
             <form action="/blog" method="POST">
             Title: <input type="text" name="name"><br>
             Date: <input type="text" name="description"><br>
@@ -74,6 +91,7 @@
             Image: <input type="text" name="price"><br>
                 <input type="submit" value="Add New Product">
             </form>
+        </div>
         <br>
     <footer>
         <p>Copyright &copy; All Rights Reserved 2022 Pluff Tie Dye Company</p> 

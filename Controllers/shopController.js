@@ -1,6 +1,7 @@
 const express = require('express');
 const shopRouter = express.Router();
 const Product = require('../Models/productSchema.js');
+const productSeed = require('../Models/data.js');
 
 
 //Seed Product Route

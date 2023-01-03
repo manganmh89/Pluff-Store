@@ -1,6 +1,7 @@
 const express = require('express');
 const blogRouter = express.Router();
 const Blog = require('../Models/blogSchema');
+const blogSeed = require('../Models/blog.js');
 
 
 //Seed Blog Route

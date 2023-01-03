@@ -17,9 +17,4 @@ routeRouter.get('/aboutme', (req, res) =>{
     res.render('aboutMe.ejs');
 });
 
-//Admin Page
-routeRouter.get('/admin', (req, res) =>{
-    res.render('admin.ejs');
-});
-
 module.exports = routeRouter;
