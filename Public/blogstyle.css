@@ -49,9 +49,6 @@ body {
 main {
     grid-area: blogPosts;
 }
-ul li {
-    list-style: none;
-}
 
 footer {
     grid-area: footer;
