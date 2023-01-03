@@ -5,26 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog and Tutorial</title>
-    <link rel="stylesheet" href="/public/shopstyle.css">
+    <link rel="stylesheet" href="/public/blogstyle.css">
 </head>
 <body>
     <header class="navbar">
-    <img
-    src="/public/pluffLogo.svg"
-    alt="circular transparent logo"
-    height="125"
-    width="125" /> 
+        <img
+        src="/public/pluffLogo.svg"
+        alt="circular transparent logo"
+        height="125"
+        width="125" />
     <h2>Welcome to my blog and tutorial page!</h2>
     <div><a href="/products">Back to the Shop!</a></div>
     <div><a href="/aboutme">About Me</a></div>
     <div><a href="/admin">Admin Login</a></div>
     </header>
-    <main id="blog">This page was designed to show and demonstrate different techniques when tie dying.
-        My aim is to share the knowledge that I've acquired through networking, research, and trial and error!
-        <ul>
+    <div class="lineBreak">
+    </div>
+    <main id="blogPosts">
+        <p>This page was designed to show and demonstrate different techniques when tie dying.
+            My aim is to share the knowledge that I've acquired through networking, research, and trial and error!</p>
+        <ul style="list-style: none;">
             <% blog.forEach(b => { %>
                 <li>
-                    <img src="<%=b.img%>"> <br>
+                    <img src="<%=b.image%>"> <br>
                     <a href="/blog/<%= b._id %>"><%= b.title; %></a>
                 </li>
             <% }); %>

@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const blogSchema = new Schema ({
     title: {
-        type:String,
+        type: String,
         required: true
     }, 
     date: {
@@ -11,11 +11,11 @@ const blogSchema = new Schema ({
         required: true
     },
     content: {
-        type: Number,
+        type: String,
         required: true,
     },
     image: {
-        type: Number,
+        type: String,
         required: true,
     },
 })

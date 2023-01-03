@@ -33,15 +33,15 @@
                 <% names.forEach(name => { %>
                     <option><%= name %></option>
                 <% }); %></select>
-            <br>
+        <br>
             Description: <input type="text" name="description" value="" /><br />
             Image: <input type="text" name="img" value="" /><br />
             Price: <input type="text" name="price" value="" /><br />
             Quantity: <input type="text" name="qty" value="" /><br />
-            <br>
-            <input type="submit" value="Submit Changes" />
+        <br>
+                <input type="submit" value="Submit Changes" />
             </form>
-            <br>
+        <br>
         <h1>Add New Product</h1>
             <form action="/products" method="POST">
             Name: <input type="text" name="name"><br>
@@ -51,30 +51,30 @@
             Quantity: <input type="text" name="qty"><br>
             <input type="submit" value="Add New Product">
             </form>
-            <br>
+        <br>
         <h1>Edit Blog Posts</h1>
-        <form action="/blog/?_method=PUT" method="POST">
+            <form action="/blog/?_method=PUT" method="POST">
             Title: <select name="title" id="Blog Title">
                 <% titles.forEach(title => { %>
                     <option><%= title %></option>
                 <% }); %></select>
-            <br>
+        <br>
             Date: <input type="text" name="description" value="" /><br />
-            Content: <input type="text" name="img" value="" /><br />
+            Content: <input type="textarea" name="img" value="" /><br />
             Image: <input type="text" name="price" value="" /><br />
-            <br>
-            <input type="submit" value="Submit Changes" />
+        <br>
+                <input type="submit" value="Submit Changes" />
             </form>
-            <br>
+        <br>
         <h1>Add New Blog Post</h1>
             <form action="/blog" method="POST">
             Title: <input type="text" name="name"><br>
             Date: <input type="text" name="description"><br>
-            Content: <input type="text" name="img"><br>
+            Content: <input type="textarea" name="img"><br>
             Image: <input type="text" name="price"><br>
-            <input type="submit" value="Add New Product">
+                <input type="submit" value="Add New Product">
             </form>
-            <br>
+        <br>
     <footer>
         <p>Copyright &copy; All Rights Reserved 2022 Pluff Tie Dye Company</p> 
     </footer>

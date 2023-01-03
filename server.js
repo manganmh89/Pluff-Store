@@ -13,6 +13,9 @@ require('dotenv').config();
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.use('/public', express.static('public'));
+app.use('/public/images', express.static('public'));
+app.use('/public/videos', express.static('public'));
+
 
 const PORT = process.env.PORT;
 const DATABASE_URI = process.env.DATABASE_URI;
@@ -24,7 +27,7 @@ db.on('connected', ()=>console.log(`successful connection to MongoDB on ${db.hos
 const productSeed = require('./models/data.js');
 const blogSeed = require('./models/blog.js');
 
-//Seed Route
+//Seed Product Route
 app.get('/products/seed', (req, res) =>{
     Product.deleteMany({}, (err) =>{
         Product.create(productSeed, (err, data) =>{
@@ -32,8 +35,8 @@ app.get('/products/seed', (req, res) =>{
         });
     });
 });
-
-app.get('/products/blog', (req, res) =>{
+//Seed Blog Route
+app.get('/blog/seed', (req, res) =>{
     Blog.deleteMany({}, (err) =>{
         Blog.create(blogSeed, (err, data) =>{
             res.redirect('/blog');
