@@ -30,8 +30,8 @@
         <h1>Edit Product</h1>
             <form action="/products/?_method=PUT" method="POST">
             ID: <select name="name" id="Product ID">
-                <% names.forEach(n => { %>
-                    <option value="<%= n._id%>"><%= n.name %></option>
+                <% names.forEach(name => { %>
+                    <option><%= name %></option>
                 <% }); %></select>
         <br>
             Description: <input type="text" name="description" value="" /><br />
