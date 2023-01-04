@@ -13,6 +13,12 @@ blogRouter.get('/seed', (req, res) =>{
     });
 });
 
+//Index of Blog Page
+blogRouter.get('/', (req, res) =>{
+    Blog.find({}, (err, foundBlog) =>{
+        res.render('blog.ejs', {blog: foundBlog});
+    });
+});
 
 //New Blog
 blogRouter.get('/new', (req, res) =>{
@@ -52,22 +58,22 @@ blogRouter.get('/:id/edit', (req, res) =>{
         res.render('admin.ejs', {foundBlog})
     });
 });
+
 //Edit the blog based on the returned blog ID from MongoDB
-// blogRouter.get('/edit', (req, res) =>{
-//     Blog.find({}, (err, products) =>{
-//         const titles = [];
-//         for (let blog of blogs){
-//             titles.push(blog.title)
-//         } console.log(titles);
-//         res.render('admin.ejs', {titles});
-//     });
-// });
+blogRouter.get('/edit', (req, res) =>{
+    Blog.find({}, (err, products) =>{
+        const titles = [];
+        for (let blog of blogs){
+            titles.push(blog.title)
+        } console.log(titles);
+        res.render('admin.ejs', {titles});
+    });
+});
 
-
-//Index of Blog Page
-blogRouter.get('/', (req, res) =>{
-    Blog.find({}, (err, foundBlog) =>{
-        res.render('blog.ejs', {blog: foundBlog});
+//Show Blog page
+blogRouter.get('/:id', (req, res) =>{
+    Blog.findById(req.params.id, (err, blog) =>{
+        res.render('showBlog.ejs', {blog});
     });
 });
 

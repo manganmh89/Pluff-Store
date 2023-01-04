@@ -19,6 +19,7 @@ shopRouter.get('/', (req, res) =>{
         res.render('index.ejs', {products: foundProduct});
     });
 });
+
 //New Product
 shopRouter.get('/new', (req, res) =>{
     res.render('new.ejs');
@@ -67,6 +68,7 @@ shopRouter.get('/:id/edit', (req, res) =>{
         res.render("edit.ejs", {product: foundProduct});
     });
 });
+
 //Edit the item based on the returned product ID from MongoDB
 shopRouter.get('/edit', (req, res)=>{
     Product.find({}, (err, products) =>{
