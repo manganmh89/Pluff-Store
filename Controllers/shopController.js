@@ -41,7 +41,6 @@ shopRouter.put('/:id', (req, res) =>{
             new:true,
         },
         (error, updatedProduct) =>{
-            // console.log(error)
             res.redirect(`/products/${req.params.id}`)
         });
 });

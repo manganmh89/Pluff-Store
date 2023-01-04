@@ -75,19 +75,19 @@
                     <option><%= title %></option>
                 <% }); %></select>
         <br>
-            Date: <input type="text" name="description" value="" /><br />
-            Content: <input type="textarea" name="img" value="" /><br />
-            Image: <input type="text" name="price" value="" /><br />
+            Date: <input type="text" name="date" value="" /><br />
+            Content: <input type="textarea" name="content" value="" /><br />
+            Image: <input type="text" name="image" value="" /><br />
         <br>
                 <input type="submit" value="Submit Changes" />
             </form>
         <br>
         <h3>Add New Blog Post</h3>
             <form action="/blog" method="POST">
-            Title: <input type="text" name="name"><br>
-            Date: <input type="text" name="description"><br>
-            Content: <input type="textarea" name="img"><br>
-            Image: <input type="text" name="price"><br>
+            Title: <input type="text" name="title"><br>
+            Date: <input type="text" name="date"><br>
+            Content: <input type="textarea" name="content"><br>
+            Image: <input type="text" name="image"><br>
                 <input type="submit" value="Add New Blog Post">
             </form>
         </div>
