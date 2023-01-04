@@ -14,9 +14,9 @@ require('dotenv').config();
 //Middleware
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
-app.use('/public', express.static('public'));
-app.use('/public/images', express.static('public'));
-app.use('/public/videos', express.static('public'));
+app.use('/Public', express.static('public'));
+app.use('/Public/images', express.static('public'));
+app.use('/Public/videos', express.static('public'));
 app.use('/blog', blogRouter);
 app.use('/products', shopRouter);
 app.use('/admin', adminRouter);
