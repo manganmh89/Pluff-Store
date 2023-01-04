@@ -20,7 +20,7 @@ app.use('/public/videos', express.static('public'));
 app.use('/blog', blogRouter);
 app.use('/products', shopRouter);
 app.use('/admin', adminRouter);
-app.use(routeRouter);
+app.use('/', routeRouter);
 // app.use('/admin', routeRouter);
 
 //Database Connection

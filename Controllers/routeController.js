@@ -17,7 +17,9 @@ routeRouter.get('/admin/edit', (req, res) =>{
 routeRouter.get('/showblog', (req, res) =>{
     res.render('showBlog.ejs');
 });
-
+routeRouter.get('/', (req, res) =>{
+    res.redirect('/products');
+});
 
 //About Me Page
 routeRouter.get('/aboutme', (req, res) =>{
