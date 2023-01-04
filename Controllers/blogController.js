@@ -50,7 +50,7 @@ blogRouter.put('/:id', (req, res) =>{
 //Create Blog (on admin page)
 blogRouter.post('/', (req, res) =>{
     Blog.create(req.body, (error, createdBlog) =>{
-        res.redirect('/blog');
+        res.redirect('/');
     });
 });
 

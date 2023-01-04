@@ -69,7 +69,7 @@
         <br>
         <div class="editBlog">
         <h3>Edit Blog Posts</h3>
-            <form action="/blog/?_method=PUT" method="POST">
+            <form action="../blog/?_method=PUT" method="POST">
             Title: <select name="title" id="Blog Title">
                 <% titles.forEach(title => { %>
                     <option><%= title %></option>
@@ -83,7 +83,7 @@
             </form>
         <br>
         <h3>Add New Blog Post</h3>
-            <form action="/blog" method="POST">
+            <form action="../blog" method="POST">
             Title: <input type="text" name="title"><br>
             Date: <input type="text" name="date"><br>
             Content: <input type="textarea" name="content"><br>
