@@ -18,6 +18,7 @@ routeRouter.get('/showblog', (req, res) =>{
     res.render('showBlog.ejs');
 });
 
+
 //About Me Page
 routeRouter.get('/aboutme', (req, res) =>{
     res.render('aboutMe.ejs');
