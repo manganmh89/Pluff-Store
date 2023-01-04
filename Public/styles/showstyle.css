@@ -48,7 +48,9 @@ body {
 }
 
 main {
-    grid-area: blogPosts;
+    grid-area: showItem;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {

@@ -6,7 +6,14 @@ const Blog = require('../Models/blogSchema.js');
 
 
 adminRouter.get('/', (req, res)=>{
-
+    res.format({
+        html: function() {
+            res.render('404', {url: req.url})
+        },
+        json: function() {
+            res.json({ error: 'Not found' })
+        },
+    });
     res.send('root admin');
 });
 
@@ -19,7 +26,7 @@ adminRouter.put('./edit', (req, res) =>{
 adminRouter.get('/edit', (req, res) => {
     const titles = [];
     const names = [];
-    Product.find({}, (error, products) => {
+        Product.find({}, (error, products) => {
         for (let product of products) {
             names.push(product.name);
         }
