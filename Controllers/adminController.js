@@ -5,15 +5,15 @@ const Product = require('../Models/productSchema.js');
 const Blog = require('../Models/blogSchema.js');
 
 
-// adminRouter.get('/', (req, res)=>{
+adminRouter.get('/', (req, res)=>{
 
-//     res.send('root admin');
-// });
+    res.send('root admin');
+});
 
-// adminRouter.put('./edit', (req, res) =>{
-//     console.log[req.body.test]
-//     res.send("AJAX response")
-// });
+adminRouter.put('./edit', (req, res) =>{
+    console.log[req.body.test]
+    res.send("AJAX response")
+});
 
 //Admin Page
 adminRouter.get('/edit', (req, res) => {

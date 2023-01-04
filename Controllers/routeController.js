@@ -1,4 +1,5 @@
 const express = require('express');
+const { route } = require('./shopController');
 const routeRouter = express.Router();
 
 //Edit the blog based on the returned blog title from MongoDB
@@ -11,6 +12,11 @@ routeRouter.get('/admin/edit', (req, res) =>{
         res.render('admin.ejs');
     });
 // });
+
+//Index
+routeRouter.get('/showblog', (req, res) =>{
+    res.render('showBlog.ejs');
+});
 
 //About Me Page
 routeRouter.get('/aboutme', (req, res) =>{
