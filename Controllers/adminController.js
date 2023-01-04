@@ -5,22 +5,22 @@ const Product = require('../Models/productSchema.js');
 const Blog = require('../Models/blogSchema.js');
 
 
-adminRouter.get('/', (req, res)=>{
-    res.format({
-        html: function() {
-            res.render('404', {url: req.url})
-        },
-        json: function() {
-            res.json({ error: 'Not found' })
-        },
-    });
-    res.send('root admin');
-});
+// adminRouter.get('/', (req, res)=>{
+//     res.format({
+//         html: function() {
+//             res.render('404', {url: req.url})
+//         },
+//         json: function() {
+//             res.json({ error: 'Not found' })
+//         },
+//     });
+//     res.send('root admin');
+// });
 
-adminRouter.put('./edit', (req, res) =>{
-    console.log[req.body.test]
-    res.send("AJAX response")
-});
+// adminRouter.put('./edit', (req, res) =>{
+//     console.log[req.body.test]
+//     res.send("AJAX response")
+// });
 
 //Admin Page
 adminRouter.get('/edit', (req, res) => {
