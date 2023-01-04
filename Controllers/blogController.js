@@ -14,7 +14,7 @@ blogRouter.get('/seed', (req, res) =>{
 });
 
 //Index of Blog Page
-blogRouter.get('/blogindex', (req, res) =>{
+blogRouter.get('/blog', (req, res) =>{
     Blog.find({}, (err, foundBlog) =>{
         res.render('blog.ejs', {blog: foundBlog});
     });
