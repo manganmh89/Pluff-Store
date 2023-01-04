@@ -11,13 +11,13 @@ routeRouter.get('/admin/edit', (req, res) =>{
     //     }
         res.render('admin.ejs');
     });
+
+// //Index Route for Blog
+// routeRouter.get('/blog', (req, res) =>{
+//     res.render('blog.ejs');
 // });
 
-//Index
-routeRouter.get('/blog', (req, res) =>{
-    res.render('blog.ejs');
-});
-
+//Home Page Route
 routeRouter.get('/', (req, res) =>{
     res.redirect('/products');
 });

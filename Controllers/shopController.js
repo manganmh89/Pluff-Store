@@ -22,7 +22,7 @@ shopRouter.get('/', (req, res) =>{
 
 //New Product
 shopRouter.get('/new', (req, res) =>{
-    res.render('new.ejs');
+    res.render('admin.ejs');
 });
 
 //Delete Products
@@ -65,7 +65,7 @@ shopRouter.post('/', (req, res)=>{
 //Edit Product (on admin page)
 shopRouter.get('/:id/edit', (req, res) =>{
     Product.findById(req.params.id, (err, foundProduct) =>{
-        res.render("edit.ejs", {product: foundProduct});
+        res.render('edit.ejs', {product: foundProduct});
     });
 });
 
@@ -79,6 +79,7 @@ shopRouter.get('/edit', (req, res)=>{
         res.render('admin.ejs', {names});
     });
 });
+
 //Show Products page
 shopRouter.get('/:id', (req, res)=>{
     Product.findById(req.params.id, (err, product) =>{

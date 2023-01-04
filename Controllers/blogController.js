@@ -1,6 +1,6 @@
 const express = require('express');
 const blogRouter = express.Router();
-const Blog = require('../Models/blogSchema');
+const Blog = require('../Models/blogSchema.js');
 const blogSeed = require('../Models/blog.js');
 
 
@@ -14,9 +14,11 @@ blogRouter.get('/seed', (req, res) =>{
 });
 
 //Index of Blog Page
-blogRouter.get('/blog', (req, res) =>{
-    Blog.find({}, (err, foundBlog) =>{
-        res.render('blog.ejs', {blog: foundBlog});
+blogRouter.get('/', (req, res) =>{
+    Blog.find({}, (err, blog) =>{
+        // console.log(err);
+        // console.log(blog);
+        res.render('blog.ejs', {blog});
     });
 });
 
