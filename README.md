@@ -9,7 +9,10 @@ This website was designed as an extension of my hobby, I hope to create an outle
 - JavaScript/jQuery/JSON
 - MongoDB
 - Git/Github - Github Pages for Hosting
-- Heroku Deployment
+- Heroku Deployment 
+
+
+[![Technology Used](https://skillicons.dev/icons?i=html,css,javascript,github,figma,heroku,&theme=light)](https://skillicons.dev)
 
 ## Screenshots
 ![wireframe](./Public/images/Pluff%20Wireframe.png)
@@ -21,3 +24,4 @@ This website was designed as an extension of my hobby, I hope to create an outle
 ## Future Enhancements
 - Allow users to make an account for updates on the shop and blog. 
 - Integrate authorization directly on the platform to allow secure CRUD capabilities. 
+- Integrate payment method via third party processing. 
