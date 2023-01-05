@@ -12,11 +12,11 @@ This website was designed as an extension of my hobby, I hope to create an outle
 - Heroku Deployment
 
 ## Screenshots
-![wireframe](./images/wireframe-ss.png)
-![production version](./images/deployed-ss2.png)
+![wireframe](./Public/images/Pluff%20Wireframe.png)
+![production version](./Public/images/PluffShop%20deployed.png)
 
 ## Getting Started
-[Click here](URL) to visit the deployed app!
+[Click here](https://pluff-store.herokuapp.com/products) to visit the deployed app!
 
 ## Future Enhancements
 - Allow users to make an account for updates on the shop and blog. 
