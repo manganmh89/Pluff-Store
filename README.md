@@ -20,4 +20,4 @@ This website was designed as an extension of my hobby, I hope to create an outle
 
 ## Future Enhancements
 - Allow users to make an account for updates on the shop and blog. 
-- Integrate authorization directly on the platform to allow secure updating and editing. 
+- Integrate authorization directly on the platform to allow secure CRUD capabilities. 

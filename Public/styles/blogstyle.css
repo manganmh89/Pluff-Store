@@ -27,6 +27,7 @@ a:hover {
 video {
     justify-content: center;
     align-content: center;
+    margin: 15px;
 }
 
 body {
@@ -38,7 +39,7 @@ body {
     "lineBreak"
     "blogPosts"
     "footer";
-    margin: auto;
+    margin: 15px;
     grid-gap: 2px;
     font-family:'Courier New';
     align-content: center;
@@ -49,6 +50,7 @@ body {
 
 main {
     grid-area: blogPosts;
+    margin: 15px;
 }
 
 footer {
@@ -60,4 +62,20 @@ footer {
     color: #6FDE6E;
     display: flex;
     justify-content: space-evenly;
+}
+
+#hammock {
+    align-items: right;
+    justify-content: right;
+    height: 220px;
+    width: 175px;
+    margin: 15px;
+}
+
+#tdjacket {
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 300px;
+    margin: 15px;
 }
